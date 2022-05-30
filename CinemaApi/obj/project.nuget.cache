@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "7ahh7rrense5311fEQHj6+lJmdBI2aXSKcWVAc9TvzjIvf3SiYbE33cc7F2hMBneu9nO9Ph0qXnUg+ae6fGL7w==",
+  "success": true,
+  "projectFilePath": "C:\\Git\\Dot Net\\CinemaApi\\CinemaApi\\CinemaApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\michaelmah\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\michaelmah\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\michaelmah\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\michaelmah\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\michaelmah\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\michaelmah\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
