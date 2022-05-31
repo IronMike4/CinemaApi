@@ -30,6 +30,7 @@ namespace CinemaApi
     {
 
       services.AddControllers();
+      services.AddMvc().AddXmlSerializerFormatters();
       services.AddDbContext<CinemaDBContext>(option => option.UseSqlServer(@"Data Source= (localdb)\MSSQLLocalDB;Initial Catalog=CinemaDb;Integrated Security = True"));
       services.AddSwaggerGen(c =>
       {
