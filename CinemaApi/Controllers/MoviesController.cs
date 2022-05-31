@@ -1,7 +1,9 @@
-﻿using CinemaApi.Models;
-using Microsoft.AspNetCore.Http;
+﻿using CinemaApi.Data;
+using CinemaApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CinemaApi.Controllers
 {
@@ -9,34 +11,57 @@ namespace CinemaApi.Controllers
   [ApiController]
   public class MoviesController : ControllerBase
   {
-    private static List<Movie> movies = new List<Movie>
-    {
-      new Movie(){Id = 0, Name = "Mission Impossible", Language = "English"},
-      new Movie(){Id = 1, Name = "The Matrix", Language = "English"},
-    };
+    private CinemaDBContext _dbContext;
 
+    public MoviesController(CinemaDBContext dbContext)
+    {
+      _dbContext = dbContext;
+    }
+
+
+
+
+    // GET: api/<MoviesController>
     [HttpGet]
     public IEnumerable<Movie> Get()
     {
-      return movies;
+      return _dbContext.Movies;
     }
 
+    // GET api/<MoviesController>/5
+    [HttpGet("{id}")]
+    public Movie Get(int id)
+    {
+      var movie = _dbContext.Movies.Find(id);
+      return movie;
+    }
+
+    // POST api/<MoviesController>
     [HttpPost]
-    public void Post([FromBody] Movie movie)
+    public void Post([FromBody] Movie movieObj)
     {
-      movies.Add(movie);
+      _dbContext.Movies.Add(movieObj);
+      _dbContext.SaveChanges();
     }
 
+    // PUT api/<MoviesController>/5
     [HttpPut("{id}")]
-    public void Put(int id,[FromBody] Movie movie)
+    public void Put(int id, [FromBody] Movie movieObj)
     {
-      movies[id] = movie;
+      var movie = _dbContext.Movies.Find(id);
+      movie.Name = movieObj.Name;
+      movie.Language = movieObj.Language;
+      _dbContext.SaveChanges();
+
     }
 
+    // DELETE api/<MoviesController>/5
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
-      movies.RemoveAt(id);
+      var movie = _dbContext.Movies.Find(id);
+      _dbContext.Movies.Remove(movie);
+      _dbContext.SaveChanges();
     }
   }
 }
