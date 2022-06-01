@@ -64,7 +64,11 @@ namespace CinemaApi.Controllers
         var fileStream = new FileStream(filePath, FileMode.Create);
         movieObj.Image.CopyTo(fileStream);
       }
-      return Ok();
+      movieObj.ImageUrl = filePath.Remove(0,7);
+      _dbContext.Movies.Add(movieObj);
+      _dbContext.SaveChanges();
+      
+      return StatusCode(StatusCodes.Status201Created);
     }
 
     // PUT api/<MoviesController>/5

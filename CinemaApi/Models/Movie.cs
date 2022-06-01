@@ -11,5 +11,7 @@ namespace CinemaApi.Models
     public double Rating { get; set; }
     [NotMapped]
     public IFormFile Image { get; set; }
+    public string ImageUrl { get; set; }
+
   }
 }
