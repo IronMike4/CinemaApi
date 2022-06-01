@@ -1,4 +1,7 @@
-﻿namespace CinemaApi.Models
+﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CinemaApi.Models
 {
   public class Movie
   {
@@ -6,5 +9,7 @@
     public string Name { get; set; }
     public  string Language { get; set; }
     public double Rating { get; set; }
+    [NotMapped]
+    public IFormFile Image { get; set; }
   }
 }
