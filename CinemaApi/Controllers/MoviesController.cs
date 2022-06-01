@@ -65,6 +65,7 @@ namespace CinemaApi.Controllers
       {
         movie.Name = movieObj.Name;
         movie.Language = movieObj.Language;
+        movie.Rating = movieObj.Rating;
         _dbContext.SaveChanges();
         return Ok("Record updated successfully");
       }
