@@ -45,6 +45,13 @@ namespace CinemaApi.Controllers
       return Ok(movie);
     }
 
+    // api/Movies/Test/5
+    [HttpGet("[action]/{id}")]
+    public int Test(int id)
+    {
+      return id;
+    }
+
     // POST api/<MoviesController>
     //[HttpPost]
     //public IActionResult Post([FromBody] Movie movieObj)
