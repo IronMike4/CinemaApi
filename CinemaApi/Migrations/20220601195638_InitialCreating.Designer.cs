@@ -4,14 +4,16 @@ using CinemaApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CinemaApi.Migrations
 {
     [DbContext(typeof(CinemaDBContext))]
-    partial class CinemaDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220601195638_InitialCreating")]
+    partial class InitialCreating
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
